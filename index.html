@@ -17,12 +17,6 @@
   </head>
   <body>
     <canvas id="myCanvas" width="480" height="320"></canvas>
-
-    <script type="module">
-    import init, { run } from "./pkg/wasm_mdn_2d_breakout_game_rust.js";
-    init().then(() => {
-      run();
-    });
-    </script>
+    <script type="module" src="/src-ts/index.ts"></script>
   </body>
 </html>

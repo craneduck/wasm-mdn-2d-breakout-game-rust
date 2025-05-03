@@ -1,0 +1,45 @@
+{
+  "include": ["src-ts/**/*"],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx", // tsxをjsに
+    "useDefineForClassFields": true, // Vite用
+
+    /* Modules */
+    "module": "ES2022", // Vite用
+    "moduleResolution": "bundler", // Vite用
+    "types": ["vite/client"],
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "~/*": ["./src-ts/*"]
+    },
+
+    /* JavaScript Support */
+    "allowJs": false,
+    "checkJs": false,
+
+    /* Emit */
+    "noEmit": true, // tscではコンパイルせずに型チェックのみ
+
+    /* Interop Constraints */
+    "isolatedModules": true, // Viteではtrue
+    "allowSyntheticDefaultImports": false, // esModuleInteropと併せて
+    "esModuleInterop": false, // CommonJS形式のファイルをインポートするか(状況で変更する)
+    "forceConsistentCasingInFileNames": true, // ファイル名の小文字大文字をチェックする
+    "verbatimModuleSyntax": true, // コンパイル時に型情報のimport typeを削除し、値のimportだけを残す
+
+    /* Type Checking */
+    "strict": true,
+    "noUnusedLocals": true, // 必要に応じて変更
+    "noUnusedParameters": true, // 必要に応じて変更
+    "noImplicitReturns": true, // 必要に応じて変更
+    "noFallthroughCasesInSwitch": true, // breakが無いswitch〜caseをエラーにする
+
+    /* Completeness */
+    "skipLibCheck": false // *.d.tsの型チェックをスキップするか
+  }
+}
