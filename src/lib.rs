@@ -21,7 +21,7 @@ impl Ball {
             0.0,
             std::f64::consts::PI * 2.0,
         );
-        ctx.set_fill_style(&JsValue::from_str("#0095DD"));
+        ctx.set_fill_style_str("#0095DD");
         ctx.fill();
         ctx.close_path();
     }
@@ -45,7 +45,7 @@ impl Brick {
                 self.width as f64,
                 self.height as f64,
             );
-            ctx.set_fill_style(&JsValue::from_str("#0095DD"));
+            ctx.set_fill_style_str("#0095DD");
             ctx.fill();
             ctx.close_path();
         }
@@ -107,7 +107,7 @@ impl Paddle {
             self.width as f64,
             self.height as f64,
         );
-        ctx.set_fill_style(&JsValue::from_str("#0095DD"));
+        ctx.set_fill_style_str("#0095DD");
         ctx.fill();
         ctx.close_path();
     }
@@ -326,8 +326,7 @@ impl Game {
     // スコア描画
     fn draw_score(&self) {
         self.canvas_context.set_font("16px Arial");
-        self.canvas_context
-            .set_fill_style(&JsValue::from_str("#0095DD"));
+        self.canvas_context.set_fill_style_str("#0095DD");
         self.canvas_context
             .fill_text(&format!("Score: {}", self.score), 8.0, 20.0)
             .unwrap();
@@ -336,8 +335,7 @@ impl Game {
     // ライフ描画
     fn draw_lives(&self) {
         self.canvas_context.set_font("16px Arial");
-        self.canvas_context
-            .set_fill_style(&JsValue::from_str("#0095DD"));
+        self.canvas_context.set_fill_style_str("#0095DD");
         self.canvas_context
             .fill_text(
                 &format!("Lives: {}", self.lives),
